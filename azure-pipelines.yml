@@ -19,5 +19,5 @@ steps:
     dockerComposeFile: '$(Build.SourcesDirectory)/docker-compose.yml'
     action: 'Run a Docker Compose command'
     dockerComposeCommand: 'up'
-    arguments: '--build'
+    arguments: '--build --env-file $(downloadFile.secureFilePath)'
     
