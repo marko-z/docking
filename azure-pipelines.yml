@@ -11,13 +11,16 @@ pool:
 
 steps:
 - task: DownloadSecureFile@1
+  name: env
   inputs:
     secureFile: '.env'
+
+
 - task: DockerCompose@0
   inputs:
     containerregistrytype: 'Azure Container Registry'
     dockerComposeFile: '$(Build.SourcesDirectory)/docker-compose.yaml'
     action: 'Run a Docker Compose command'
     dockerComposeCommand: 'up'
-    arguments: '--build --env-file $(downloadFile.secureFilePath)/.env'
+    arguments: '--build --env-file $(env.secureFilePath)'
     
