@@ -14,7 +14,7 @@ steps:
   name: env
   inputs:
     secureFile: '.env'
-
+- script: cat $(env.secureFilePath)
 
 - task: DockerCompose@0
   inputs:
