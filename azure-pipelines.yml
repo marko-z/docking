@@ -29,5 +29,5 @@ steps:
     containerregistrytype: 'Container Registry'
     dockerRegistryEndpoint: 'Docker'
     dockerComposeFile: 'docker-compose.yml'
-    action: 'Push services'
-    includeLatestTag: true
+    action: 'Run a Docker Compose command'
+    dockerComposeCommand: 'push'
