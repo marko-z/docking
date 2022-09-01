@@ -30,7 +30,10 @@ steps:
     action: 'Run a Docker Compose command'
     dockerComposeCommand: 'up'
     arguments: '--build --env-file $(env.secureFilePath)'
-    
+
+- task: CmdLine@2
+  inputs:
+    script: 'docker images'
 - task: DockerCompose@0
   inputs:
     containerregistrytype: 'Container Registry'
