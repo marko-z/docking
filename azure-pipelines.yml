@@ -15,7 +15,12 @@ steps:
   inputs:
     secureFile: '.env'
 - script: cat $(env.secureFilePath)
-
+- task: DockerCompose@0
+  inputs:
+    containerregistrytype: 'Container Registry'
+    dockerRegistryEndpoint: 'Docker'
+    dockerComposeFile: '**/docker-compose.yml'
+    action: 'Build services'
 - task: DockerCompose@0
   inputs:
     containerregistrytype: 'Container Registry'
