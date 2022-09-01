@@ -16,7 +16,13 @@ steps:
     secureFile: '.env'
 - script: cat $(env.secureFilePath)
 
-
+- task: DockerCompose@0
+  inputs:
+    containerregistrytype: 'Azure Container Registry'
+    dockerComposeFile: '**/docker-compose.yml'
+    action: 'Run a Docker Compose command'
+    dockerComposeCommand: 'down -v'
+    
 - task: DockerCompose@0
   inputs:
     containerregistrytype: 'Azure Container Registry'
