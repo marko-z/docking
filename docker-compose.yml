@@ -17,7 +17,7 @@ services:
     build: 
       context: .
       dockerfile: server.dockerfile
-    image: mzakrzwsk/server_test
+    image: server_test
     depends_on:
       - db
     ports:
