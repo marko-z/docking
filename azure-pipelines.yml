@@ -16,6 +16,7 @@ steps:
     secureFile: '.env'
 - script: cat $(env.secureFilePath)
 
+
 - task: DockerCompose@0
   inputs:
     containerregistrytype: 'Azure Container Registry'
@@ -28,6 +29,6 @@ steps:
   inputs:
     containerregistrytype: 'Container Registry'
     dockerRegistryEndpoint: 'Docker'
-    dockerComposeFile: 'docker-compose.yml'
+    dockerComposeFile: '**/docker-compose.yml'
     action: 'Push services'
     additionalImageTags: 'mzakrzwsk/server_test'
