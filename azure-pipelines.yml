@@ -29,5 +29,5 @@ steps:
     containerregistrytype: 'Container Registry'
     dockerRegistryEndpoint: 'Docker'
     dockerComposeFile: 'docker-compose.yml'
-    action: 'Run a Docker Compose command'
-    dockerComposeCommand: 'push'
+    action: 'Push services'
+    additionalImageTags: 'mzakrzwsk/server_test'
