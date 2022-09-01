@@ -19,7 +19,7 @@ steps:
 - task: DockerCompose@0
   inputs:
     containerregistrytype: 'Azure Container Registry'
-    dockerComposeFile: '$(Build.SourcesDirectory)/docker-compose.yaml'
+    dockerComposeFile: '$(Build.SourcesDirectory)/docker-compose.yml'
     action: 'Run a Docker Compose command'
     dockerComposeCommand: 'up'
     arguments: '--build --env-file $(env.secureFilePath)'
